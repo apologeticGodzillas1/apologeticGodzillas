@@ -4,12 +4,12 @@ create database valence;
 
 use valence;
 
-create table users (
+create table if not exists users (
   id int(4) primary key auto_increment,
   username varchar(15) unique
 );
 
-create table entries (
+create table if not exists entries (
   id int(5) primary key auto_increment,
   sleepHrs int(2),
   minsExercise int(2),
