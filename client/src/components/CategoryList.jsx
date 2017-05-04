@@ -5,6 +5,7 @@ class CategoryList extends React.Component {
   constructor(props) {
     super (props);
     this.state = { 
+      username: '',
       name: '',
       mind: '',
       body: '',
@@ -35,16 +36,19 @@ class CategoryList extends React.Component {
     })
   };
 
-  get () { // READ
+  get (state) { // READ
     var context = this;
+    console.log('getting info!')
     $.ajax({
       url: '/users/get',
+      type: 'GET'
     })
     .done(function(data) {
       console.log('Print data to screen...');
       context.setState({
         items: data
       })
+      console.log(data)
     })
     .fail(function(err) {
       console.log('err', err);
@@ -85,35 +89,58 @@ class CategoryList extends React.Component {
     })
   }
 
+  handleChangeUsername(e) {
+    this.setState({
+      username: e.target.value
+    });
+  }
+
+  getInfoClick (e) {
+    this.get(this.state);
+  }
+
   render() {
     return (
       <div>
-        <form className="new-form">
-          
-          <div className="form-group">
-            <label for="nameInput">Name</label>
-            <input type="text" className="form-control" id="nameInput" placeholder="Your name / ID" value={this.state.name} onChange={this.handleChangeName.bind(this)}></input>
-          </div>
+        <div>
+          <form className="get-data-form">
+            
+            <div className="form-group">
+              <label for="nameInput">Username</label>
+              <input type="text" className="form-control" id="nameInput" placeholder="Your name / ID" value={this.state.username} onChange={this.handleChangeUsername.bind(this)}></input>
+            </div>
 
-          <div className="form-group">
-            <label for="mindInput">Mind</label>
-            <input type="text" className="form-control" id="mindInput" placeholder="Hours Slept (0-10)" value={this.state.mind} onChange={this.handleChangeMind.bind(this)}></input>
-          </div>
+          </form>
+          <button type="submit" className="btn btn-primary" onClick={this.getInfoClick.bind(this)}>Get Info</button>
+        </div>
+        <div>
+          <form className="new-form">
+            
+            <div className="form-group">
+              <label for="nameInput">Name</label>
+              <input type="text" className="form-control" id="nameInput" placeholder="Your name / ID" value={this.state.name} onChange={this.handleChangeName.bind(this)}></input>
+            </div>
 
-          <div className="form-group">
-            <label for="bodyInput">Body</label>
-            <input type="text" className="form-control" id="bodyInput" placeholder="Exercise in 10 min (0-10)" value={this.state.body} onChange={this.handleChangeBody.bind(this)}></input>
-          </div>
+            <div className="form-group">
+              <label for="mindInput">Mind</label>
+              <input type="text" className="form-control" id="mindInput" placeholder="Hours Slept (0-10)" value={this.state.mind} onChange={this.handleChangeMind.bind(this)}></input>
+            </div>
 
-          <div className="form-group">
-            <label for="soulInput">Soul</label>
-            <input type="text" className="form-control" id="soulInput" placeholder="Mood Scale (0-10)" value={this.state.soul} onChange={this.handleChangeSoul.bind(this)}></input>
-          </div>
+            <div className="form-group">
+              <label for="bodyInput">Body</label>
+              <input type="text" className="form-control" id="bodyInput" placeholder="Exercise in 10 min (0-10)" value={this.state.body} onChange={this.handleChangeBody.bind(this)}></input>
+            </div>
 
-        </form>
-        <button type="submit" className="btn btn-primary" onClick={this.handleClick.bind(this)}>Submit</button>
+            <div className="form-group">
+              <label for="soulInput">Soul</label>
+              <input type="text" className="form-control" id="soulInput" placeholder="Mood Scale (0-10)" value={this.state.soul} onChange={this.handleChangeSoul.bind(this)}></input>
+            </div>
 
-      </div> 
+          </form>
+          <button type="submit" className="btn btn-primary" onClick={this.handleClick.bind(this)}>Submit Info</button>
+
+        </div>   
+      </div>
     )
   }
 }

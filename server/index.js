@@ -27,7 +27,9 @@ app.get('/users/get', function (req, res) {
   // perform database query to select all data for user using helper function
   // that is same as POST listener function
 
-  queries.selectUserData(req.data, function (err, results) {
+  var data = JSON.parse(res.data);
+  // *** NEED TO CHECK IF DATA.USERNAME WORKS FOR GET REQUEST
+  queries.selectUserData(req.body.username, function (err, results) { // JEE COMMENTD OUT TO GET SERVER TO RUN
     if (err) {
       console.error('User data not selected')
     }
@@ -38,6 +40,7 @@ app.get('/users/get', function (req, res) {
       // **Need to test results
     });
   });
+
 });
 
 app.post('/users/post', function (req, res) {
