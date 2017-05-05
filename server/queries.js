@@ -12,14 +12,14 @@ var connection = require('../database/index.js')
 
 
 // may need to refactor name select depending on data stream
-modular.exports = {
+module.exports = {
 
   // QUERY DOES NOT WORK YET, BUT IS CLOSE!
-  selectUserData: function (name, callback) {
+  selectUserData: function (query, callback) {
     connection.query(
     `SELECT entries.* FROM entries, users WHERE
     entries.users_id IN
-    (SELECT id FROM users WHERE username = ${data.name}
+    (SELECT id FROM users WHERE username = ${query.username}
     )`, function (err, results, fields) {
       if (err) {
         callback(err, null);
@@ -27,21 +27,21 @@ modular.exports = {
         callback(null, results);
       }
     });
-  };
+  },
 
   // may need to refactor variables depending on data stream
   insertUserData: function (data, callback) {
     connection.query(
     `INSERT INTO entries (sleepHrs, minsExercise, mood, users_ID) VALUES
     (${data.mind}, ${data.body}, ${data.soul}, ${data.name})
-    `), function (err, results, fields) {
+    `, function (err, results, fields) {
       if (err) {
         callback(err, null);
       } else {
         callback(null, results);
       }
     });
-  };
+  },
 
   returnEntries: function (callback) {
     connection.query('select * from entries', function (err, results) {
@@ -51,5 +51,5 @@ modular.exports = {
         callback(null, results);
       }
     });
-  };
+  }
 };

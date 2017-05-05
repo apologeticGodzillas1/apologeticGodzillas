@@ -3,10 +3,10 @@ var mysql = require('mysql');
 var mysqlConnection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: '',
+  password: 'plantlife',
   database: 'valence'
 })
 
-mysqlConnection.connection();
+mysqlConnection.connect();
 
 module.exports = mysqlConnection;

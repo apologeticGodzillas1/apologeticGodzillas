@@ -1,6 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
-// var queries = require('./queries.js');
+var queries = require('./queries.js');
 
 var app = express();
 
@@ -17,9 +17,9 @@ app.use(bodyParser.json());
 
 app.get('/users/get', function (req, res) {
   res.status(200);
-  res.json({
-    Success: true
-  });
+  // res.json({
+  //   Success: true
+  // });
   // var data = JSON.parse(res.data);
 
   // *** NEED TO CHECK IF DATA.USERNAME WORKS FOR GET REQUEST
@@ -27,9 +27,9 @@ app.get('/users/get', function (req, res) {
   // perform database query to select all data for user using helper function
   // that is same as POST listener function
 
-  var data = JSON.parse(res.data);
+  // var data = JSON.parse(res.data);
   // *** NEED TO CHECK IF DATA.USERNAME WORKS FOR GET REQUEST
-  queries.selectUserData(req.body.username, function (err, results) { // JEE COMMENTD OUT TO GET SERVER TO RUN
+  queries.selectUserData(req.query, function (err, results) { // JEE COMMENTD OUT TO GET SERVER TO RUN
     if (err) {
       console.error('User data not selected')
     }
