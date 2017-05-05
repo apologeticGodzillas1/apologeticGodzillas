@@ -41,7 +41,8 @@ class CategoryList extends React.Component {
     console.log('getting info!')
     $.ajax({
       url: '/users/get',
-      type: 'GET'
+      type: 'GET',
+      data: state
     })
     .done(function(data) {
       console.log('Print data to screen...');
