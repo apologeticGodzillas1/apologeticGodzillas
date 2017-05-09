@@ -53,7 +53,7 @@ app.post('/users/post', function (req, res) {
   }
 
   queries.getUserId(testObj.username, function(data) {
-    console.log('data', data[0].id);
+    // console.log('data', data[0].id);
     testObj.id = data[0].id;
     queries.insertUserData(testObj, function(err, results) {
       if (err) {
