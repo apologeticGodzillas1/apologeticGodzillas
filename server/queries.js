@@ -29,11 +29,38 @@ module.exports = {
     });
   },
 
+  getUserId: function(query, callback) {
+    connection.query(
+      `SELECT id FROM users
+       WHERE username = '${query}'`
+      , function(err, results) {
+        if (err) {
+          console.log('it broke', err);
+        } else {
+          callback(results);
+        }
+      })
+  },
+
   // may need to refactor variables depending on data stream
+  // insertUserData: function (data, callback) {
+  //   connection.query(
+  //   `INSERT INTO entries (sleepHrs, minsExercise, mood, users_ID) VALUES
+  //   (${data.mind}, ${data.body}, ${data.soul}, ${data.name})
+  //   `, function (err, results, fields) {
+  //     if (err) {
+  //       callback(err, null);
+  //     } else {
+  //       callback(null, results);
+  //     }
+  //   });
+  // },
+
   insertUserData: function (data, callback) {
+    console.log('INSIDE INSERT', data);
     connection.query(
     `INSERT INTO entries (sleepHrs, minsExercise, mood, users_ID) VALUES
-    (${data.mind}, ${data.body}, ${data.soul}, ${data.name})
+    (${data.mind}, ${data.body}, ${data.soul}, ${data.id})
     `, function (err, results, fields) {
       if (err) {
         callback(err, null);

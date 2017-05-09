@@ -107,7 +107,7 @@ class CategoryList extends React.Component {
           <form className="get-data-form">
             
             <div className="form-group">
-              <label for="nameInput">Username</label>
+              <label htmlFor="nameInput">Username</label>
               <input type="text" className="form-control" id="nameInput" placeholder="Your name / ID" value={this.state.username} onChange={this.handleChangeUsername.bind(this)}></input>
             </div>
 
@@ -118,22 +118,22 @@ class CategoryList extends React.Component {
           <form className="new-form">
             
             <div className="form-group">
-              <label for="nameInput">Name</label>
+              <label htmlFor="nameInput">Name</label>
               <input type="text" className="form-control" id="nameInput" placeholder="Your name / ID" value={this.state.name} onChange={this.handleChangeName.bind(this)}></input>
             </div>
 
             <div className="form-group">
-              <label for="mindInput">Mind</label>
+              <label htmlFor="mindInput">Mind</label>
               <input type="text" className="form-control" id="mindInput" placeholder="Hours Slept (0-10)" value={this.state.mind} onChange={this.handleChangeMind.bind(this)}></input>
             </div>
 
             <div className="form-group">
-              <label for="bodyInput">Body</label>
+              <label htmlFor="bodyInput">Body</label>
               <input type="text" className="form-control" id="bodyInput" placeholder="Exercise in 10 min (0-10)" value={this.state.body} onChange={this.handleChangeBody.bind(this)}></input>
             </div>
 
             <div className="form-group">
-              <label for="soulInput">Soul</label>
+              <label htmlFor="soulInput">Soul</label>
               <input type="text" className="form-control" id="soulInput" placeholder="Mood Scale (0-10)" value={this.state.soul} onChange={this.handleChangeSoul.bind(this)}></input>
             </div>
 
