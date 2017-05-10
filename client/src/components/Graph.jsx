@@ -3,15 +3,21 @@ import React from 'react';
 class Graph extends React.Component {
   constructor(props) {
     super (props);
+    this.attributes;
+  }
 
+  componentWillReceiveProps(props) {
+    if (props.state.entries.length > 0) {
+      this.attributes = JSON.stringify(props.state.entries);
+    }
   }
 
   render() {
     return (
       <div>
         GRAPHS HERE
-        <br />
-        <a href="http://placehold.it"><img src="http://placehold.it/800x500"/></a>
+        <br/>
+        {this.attributes}
       </div>
     )
   }

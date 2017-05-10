@@ -16,17 +16,29 @@ module.exports = {
 
   // QUERY DOES NOT WORK YET, BUT IS CLOSE!
   selectUserData: function (query, callback) {
+    console.log('INSIDE SELECT USER DATA', query);
     connection.query(
-    `SELECT entries.* FROM entries, users WHERE
-    entries.users_id IN
-    (SELECT id FROM users WHERE username = ${query.username}
-    )`, function (err, results, fields) {
-      if (err) {
-        callback(err, null);
-      } else {
-        callback(null, results);
-      }
-    });
+      `SELECT * FROM entries
+      WHERE users_id = ${query.id}`
+      , function(err, results) {
+        if (err) {
+          console.log('error in selectUserData', err);
+        } else {
+          console.log('Data mined successfully!');
+          callback(null, results);
+        }
+    })
+    // connection.query(
+    // `SELECT entries.* FROM entries, users WHERE
+    // entries.users_id IN
+    // (SELECT id FROM users WHERE username = ${query.username}
+    // )`, function (err, results, fields) {
+    //   if (err) {
+    //     callback(err, null);
+    //   } else {
+    //     callback(null, results);
+    //   }
+    // });
   },
 
   getUserId: function(query, callback) {
