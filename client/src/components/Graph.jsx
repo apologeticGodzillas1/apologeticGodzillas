@@ -1,4 +1,15 @@
 import React from 'react';
+import $ from 'jquery';
+
+// Load Highcharts
+var Highcharts = require('highcharts');
+
+// Load a module
+require('highcharts/modules/funnel')(Highcharts);
+
+var options = require('../graphGen/highCharts1.jsx');
+var theme = require('../graphGen/highChartsTheme.jsx');
+
 
 class Graph extends React.Component {
   constructor(props) {
@@ -12,6 +23,7 @@ class Graph extends React.Component {
     }
   }
 
+  //Create the div which the chart will be rendered to.
   render() {
     return (
       <div>
@@ -21,6 +33,18 @@ class Graph extends React.Component {
       </div>
     )
   }
+
+  // render() {
+  //   return (
+  //     <div id="container">
+  //       GRAPHS HERE
+  //       <br />
+  //       <script type="text/javascript" src="../graphGen/highCharts1.js"></script>
+  //       <script type="text/javascript" src="../graphGen/highChartsTheme.js"></script>
+  //
+  //     </div>
+  //   )
+  // }
 }
 
 export default Graph;
