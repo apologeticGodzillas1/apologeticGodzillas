@@ -15,6 +15,7 @@ class Graph extends React.Component {
   constructor(props) {
     super (props);
     this.attributes;
+    // this.state = props.state;
   }
 
   // When the DOM is ready, create the chart.
@@ -25,6 +26,9 @@ class Graph extends React.Component {
               module(Highcharts);
           });
       }
+      console.log(options);
+      // console.log(this.props.state.entries, "PROPSSSS")
+      // options.series = this.props.state.entries;
       // Set container which the chart should render to.
       this.chart = new Highcharts[this.props.type || "Chart"](
           'container',
@@ -41,6 +45,8 @@ class Graph extends React.Component {
   }
 
   componentWillReceiveProps(props) {
+    console.log('2PROPS', this.props.state.entries)
+    options.series = this.props.state.entries;
     if (props.state.entries.length > 0) {
       this.attributes = JSON.stringify(props.state.entries);
     }

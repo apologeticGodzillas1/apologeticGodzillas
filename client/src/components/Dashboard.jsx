@@ -13,22 +13,22 @@ class Dashboard extends React.Component {
       <div>
         <div className="row">
             <div className="col-sm-4">
-            <CategoryList 
-              add={this.props.add} 
-              get={this.props.get} 
-              handleChangeName={this.props.handleChangeName} 
-              handleChangeMind={this.props.handleChangeMind} 
-              handleChangeBody={this.props.handleChangeBody} 
-              handleChangeSoul={this.props.handleChangeSoul} 
-              handleClick={this.props.handleClick} 
-              handleChangeUsername={this.props.handleChangeUsername} 
-              getInfoClick={this.props.getInfoClick} 
+            <CategoryList
+              add={this.props.add}
+              get={this.props.get}
+              handleChangeName={this.props.handleChangeName}
+              handleChangeMind={this.props.handleChangeMind}
+              handleChangeBody={this.props.handleChangeBody}
+              handleChangeSoul={this.props.handleChangeSoul}
+              handleClick={this.props.handleClick}
+              handleChangeUsername={this.props.handleChangeUsername}
+              getInfoClick={this.props.getInfoClick}
               state={this.props.state}
             />
           </div>
 
           <div className="col-sm-8">
-            <Graph 
+            <Graph
               state={this.props.state}
             />
           </div>

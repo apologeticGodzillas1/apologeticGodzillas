@@ -90,5 +90,19 @@ module.exports = {
         callback(null, results);
       }
     });
+  },
+
+  dbToGraph: function (data) {
+    var graphObj = {
+      mind: [0],
+      body: [0],
+      soul: [0]
+    };
+    for ( var i = 0; i < data.length; i++ ) {
+      graphObj.mind.push(data[i].sleepHrs);
+      graphObj.body.push(data[i].minsExercise);
+      graphObj.soul.push(data[i].mood);
+    }
+    return graphObj;
   }
 };
