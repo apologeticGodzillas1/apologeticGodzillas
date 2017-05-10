@@ -1,7 +1,7 @@
 // data produced with randDataGen(100, 7)
 // some null data
 
-var series = [{
+module.exports.series = [{
   name: 'mind',
   data: [0,null,5,2,10,5,3,6,7,9,6,9,null,6,3,9,9,4,null,2,8,null,8,null,2,null,5,null,5,10,6,4,3,null,null,8,5,5,1,1,9,null,null,4,1,4,10,10,null,null,7,null,null,7,3,6,1,7,null,7,6,6,9,null,null,1,5,null,2,null,null,6,2,4,null,null,9,2,null,10,9,8,null,null,9,9,null,7,null,1,4,4,7,4,4,4,null,6,10,8,4]
 }, {
