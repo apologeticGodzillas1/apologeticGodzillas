@@ -102,12 +102,19 @@ module.exports = {
     }, {
       name: 'soul',
       data: [0]
+    }, {
+      name: 'average',
+      data: [0],
+      rgba: '#FF0000',
+      type: 'area',
+      fillOpacity: 0.3
     }];
 
     for ( var i = 0; i < dbData.length; i++ ) {
       graphObj[0].data.push(dbData[i].sleepHrs);
       graphObj[1].data.push(dbData[i].minsExercise);
       graphObj[2].data.push(dbData[i].mood);
+      graphObj[3].data.push( (dbData[i].sleepHrs + dbData[i].minsExercise + dbData[i].mood) / 3 );
     }
     return graphObj;
   }

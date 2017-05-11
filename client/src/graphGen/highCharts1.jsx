@@ -12,6 +12,24 @@ var series = require('../index.jsx');
 
 module.exports = {
 
+      chart: {
+        type: 'line',
+        backgroundColor: {
+            linearGradient: [0, 0, 500, 500],
+            stops: [
+                [0, 'rgb(255, 255, 255)'],
+                [1, 'rgb(200, 200, 255)']
+            ]
+        },
+        plotBackgroundColor: {
+            linearGradient: [0, 350],
+            stops: [
+                [0, 'rgb(80, 0, 50)'],
+                [1, 'rgb(20, 200, 150)']
+            ]
+        }
+      },
+
       title: {
           text: 'Mood Index'
       },
@@ -21,6 +39,8 @@ module.exports = {
       },
 
       yAxis: {
+        floor: 0,
+        ceiling: 10,
           title: {
               text: 'Index'
           }
