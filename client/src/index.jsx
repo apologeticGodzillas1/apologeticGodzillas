@@ -50,6 +50,7 @@ class App extends React.Component {
       context.setState({
         entries: data.Data
       })
+      module.exports = this.state;
       // console.log(context.state.entries);
     })
     .fail(function(err) {
@@ -74,7 +75,7 @@ class App extends React.Component {
       body: e.target.value
     });
   }
-  
+
   handleChangeSoul(e) {
     this.setState({
       soul: e.target.value
@@ -104,17 +105,17 @@ class App extends React.Component {
   render() {
     return(
       <div className="container-fluid">
-        <Dashboard 
-          add={this.add.bind(this)} 
-          get={this.get.bind(this)} 
-          handleChangeName={this.handleChangeName.bind(this)} 
-          handleChangeMind={this.handleChangeMind.bind(this)} 
-          handleChangeBody={this.handleChangeBody.bind(this)} 
-          handleChangeSoul={this.handleChangeSoul.bind(this)} 
-          handleClick={this.handleClick.bind(this)} 
-          handleChangeUsername={this.handleChangeUsername.bind(this)} 
-          getInfoClick={this.getInfoClick.bind(this)} 
-          state={this.state} 
+        <Dashboard
+          add={this.add.bind(this)}
+          get={this.get.bind(this)}
+          handleChangeName={this.handleChangeName.bind(this)}
+          handleChangeMind={this.handleChangeMind.bind(this)}
+          handleChangeBody={this.handleChangeBody.bind(this)}
+          handleChangeSoul={this.handleChangeSoul.bind(this)}
+          handleClick={this.handleClick.bind(this)}
+          handleChangeUsername={this.handleChangeUsername.bind(this)}
+          getInfoClick={this.getInfoClick.bind(this)}
+          state={this.state}
         />
       </div>
     )

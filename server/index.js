@@ -21,7 +21,10 @@ app.get('/users/get', function (req, res) {
     username: req.query.username || req.query.name
   }
   queries.getUserId(entryObj.username, function(data) {
-    entryObj.id = data[0].id;
+
+    entryObj.id = 1
+    // COMMENTED OUT FOR dbToGraph TESTING. CORRECT ID WAS NOT COMING UP
+    // entryObj.id = data[0].id;
 
     queries.selectUserData(entryObj, function (err, results) {
       if (err) {
@@ -30,7 +33,7 @@ app.get('/users/get', function (req, res) {
         console.log('RESULTS...', results);
         res.json({
           Success: true,
-          Data: results
+          Data: queries.dbToGraph(results)
         });
       }
     })
