@@ -47,10 +47,13 @@ app.post('/users/post', function (req, res) {
     username: req.body.name,
     mindInput1: req.body.mindInput1,
     mindInput2: req.body.mindInput2,
+    mindInput3: req.body.mindInput3,
     bodyInput1: req.body.bodyInput1,
     bodyInput2: req.body.bodyInput2,
+    bodyInput3: req.body.bodyInput3,
     soulInput1: req.body.soulInput1,
-    soulInput2: req.body.soulInput2
+    soulInput2: req.body.soulInput2,
+    soulInput3: req.body.soulInput3
   }
 
   queries.getUserId(entryObj.username, function(data) {

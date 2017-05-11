@@ -71,8 +71,8 @@ module.exports = {
   insertUserData: function (data, callback) {
     console.log('INSIDE INSERT', data);
     connection.query(
-    `INSERT INTO entries (users_ID, mindSleep, mindRead, bodyExercise, bodyWater, soulMood, soulYoga) VALUES
-    (${data.id}, ${data.mindInput1}, ${data.mindInput2}, ${data.bodyInput1}, ${data.bodyInput2}, ${data.soulInput1}, ${data.soulInput2})
+    `INSERT INTO entries (users_ID, mind1, mind2, mind3, body1, body2, body3, soul1, soul2, soul3) VALUES
+    (${data.id}, ${data.mindInput1}, ${data.mindInput2}, ${data.mindInput3}, ${data.bodyInput1}, ${data.bodyInput2}, ${data.bodyInput3}, ${data.soulInput1}, ${data.soulInput2}, ${data.soulInput3})
     `, function (err, results, fields) {
       if (err) {
         callback(err, null);
@@ -111,9 +111,9 @@ module.exports = {
     }];
 
     for ( var i = 0; i < dbData.length; i++ ) {
-      var mindAvg = ( (dbData[i].mindSleep + dbData[i].mindRead) / 2 );
-      var bodyAvg = ( (dbData[i].bodyExercise + dbData[i].bodyWater) / 2 );
-      var soulAvg = ( (dbData[i].soulMood + dbData[i].soulYoga) / 2 );
+      var mindAvg = ( (dbData[i].mind1 + dbData[i].mind2 + dbData[i].mind3) / 3 );
+      var bodyAvg = ( (dbData[i].body1 + dbData[i].body2 + dbData[i].body3) / 3 );
+      var soulAvg = ( (dbData[i].soul3 + dbData[i].soul3 + dbData[i].soul3) / 3 );
 
       graphObj[0].data.push(mindAvg);
       graphObj[1].data.push(bodyAvg);
