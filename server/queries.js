@@ -92,16 +92,22 @@ module.exports = {
     });
   },
 
-  dbToGraph: function (data) {
-    var graphObj = {
-      mind: [0],
-      body: [0],
-      soul: [0]
-    };
-    for ( var i = 0; i < data.length; i++ ) {
-      graphObj.mind.push(data[i].sleepHrs);
-      graphObj.body.push(data[i].minsExercise);
-      graphObj.soul.push(data[i].mood);
+  dbToGraph: function (dbData) {
+    var graphObj = [{
+      name: 'mind',
+      data: [0]
+    }, {
+      name: 'body',
+      data: [0]
+    }, {
+      name: 'soul',
+      data: [0]
+    }];
+
+    for ( var i = 0; i < dbData.length; i++ ) {
+      graphObj[0].data.push(dbData[i].sleepHrs);
+      graphObj[1].data.push(dbData[i].minsExercise);
+      graphObj[2].data.push(dbData[i].mood);
     }
     return graphObj;
   }

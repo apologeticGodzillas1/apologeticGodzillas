@@ -8,6 +8,8 @@
   // var myChart =
   // Highcharts.chart('container', {
 
+var series = require('../index.jsx');
+
 module.exports = {
 
       title: {
@@ -38,9 +40,15 @@ module.exports = {
 
       plotOptions: {
           series: {
-              pointStart: 0
+              pointStart: 0,
+              connectNulls: true,
+              lineWidth: 1,
+              shadow: true
           }
       },
+
+
+      series: series
 
       // series: [{
       //   name: 'mind',

@@ -50,6 +50,7 @@ class App extends React.Component {
       context.setState({
         entries: data.Data
       })
+      module.exports = this.state;
       // console.log(context.state.entries);
     })
     .fail(function(err) {
