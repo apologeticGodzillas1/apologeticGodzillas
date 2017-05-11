@@ -17,9 +17,12 @@ class Dashboard extends React.Component {
               add={this.props.add}
               get={this.props.get}
               handleChangeName={this.props.handleChangeName}
-              handleChangeMind={this.props.handleChangeMind}
-              handleChangeBody={this.props.handleChangeBody}
-              handleChangeSoul={this.props.handleChangeSoul}
+              handleChangeMind1={this.props.handleChangeMind1}
+              handleChangeMind2={this.props.handleChangeMind2}
+              handleChangeBody1={this.props.handleChangeBody1}
+              handleChangeBody2={this.props.handleChangeBody2}
+              handleChangeSoul1={this.props.handleChangeSoul1}
+              handleChangeSoul2={this.props.handleChangeSoul2}
               handleClick={this.props.handleClick}
               handleChangeUsername={this.props.handleChangeUsername}
               getInfoClick={this.props.getInfoClick}

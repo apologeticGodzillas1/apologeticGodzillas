@@ -26,21 +26,21 @@ class CategoryList extends React.Component {
             </div>
 
             <div className="form-group">
-              <label htmlFor="mindInput">Mind</label>
-              <input type="text" className="form-control" id="mindInput1" placeholder="Hours Slept (0-10)" value={this.props.state.mind.input1} onChange={this.props.handleChangeMind}></input>
-              <input type="text" className="form-control" id="mindInput2" placeholder="Reading in 10 min (0-10)" value={this.props.state.input2} onChange={this.props.handleChangeMind}></input>
+              <label htmlFor="mindInput1">Mind</label>
+              <input type="text" className="form-control" id="mindInput1" placeholder="Hours Slept (0-10)" value={this.props.state.mindInput1} onChange={this.props.handleChangeMind1}></input>
+              <input type="text" className="form-control" id="mindInput2" placeholder="Reading in 10 min (0-10)" value={this.props.state.mindInput2} onChange={this.props.handleChangeMind2}></input>
             </div>
 
             <div className="form-group">
               <label htmlFor="bodyInput">Body</label>
-              <input type="text" className="form-control" id="bodyInput1" placeholder="Exercise in 10 min (0-10)" value={this.props.state.body.input1} onChange={this.props.handleChangeBody}></input>
-              <input type="text" className="form-control" id="bodyInput2" placeholder="Cups of water (0-10)" value={this.props.state.body.input2} onChange={this.props.handleChangeBody}></input>
+              <input type="text" className="form-control" id="bodyInput1" placeholder="Exercise in 10 min (0-10)" value={this.props.state.bodyInput1} onChange={this.props.handleChangeBody1}></input>
+              <input type="text" className="form-control" id="bodyInput2" placeholder="Cups of water (0-10)" value={this.props.state.bodyInput2} onChange={this.props.handleChangeBody2}></input>
             </div>
 
             <div className="form-group">
               <label htmlFor="soulInput">Soul</label>
-              <input type="text" className="form-control" id="soulInput1" placeholder="Mood Scale (0-10)" value={this.props.state.soul.input1} onChange={this.props.handleChangeSoul}></input>
-              <input type="text" className="form-control" id="soulInput2" placeholder="Yoga/Meditation in 5 min (0-10)" value={this.props.state.soul.input2} onChange={this.props.handleChangeSoul}></input>
+              <input type="text" className="form-control" id="soulInput1" placeholder="Mood Scale (0-10)" value={this.props.state.soulInput1} onChange={this.props.handleChangeSoul1}></input>
+              <input type="text" className="form-control" id="soulInput2" placeholder="Yoga/Meditation in 5 min (0-10)" value={this.props.state.soulInput2} onChange={this.props.handleChangeSoul2}></input>
             </div>
 
           </form>
