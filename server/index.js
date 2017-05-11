@@ -22,21 +22,25 @@ app.get('/users/get', function (req, res) {
   }
   queries.getUserId(entryObj.username, function(data) {
 
-    entryObj.id = 1
+    // entryObj.id = 1
     // COMMENTED OUT FOR dbToGraph TESTING. CORRECT ID WAS NOT COMING UP
-    // entryObj.id = data[0].id;
+    if (data.length > 0) {
+      entryObj.id = data[0].id;
 
-    queries.selectUserData(entryObj, function (err, results) {
-      if (err) {
-        console.error('User data not selected', err)
-      } else {
-        console.log('RESULTS...', results);
-        res.json({
-          Success: true,
-          Data: queries.dbToGraph(results)
-        });
-      }
-    })
+      queries.selectUserData(entryObj, function (err, results) {
+        if (err) {
+          console.error('User data not selected', err)
+        } else {
+          console.log('RESULTS...', results);
+          res.json({
+            Success: true,
+            Data: queries.dbToGraph(results)
+          });
+        }
+      })
+    } else {
+      console.log('User not found');
+    }
   });
 
 });
