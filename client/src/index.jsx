@@ -10,9 +10,9 @@ class App extends React.Component {
       entries: [],
       username: '',
       name: '',
-      mind: '',
-      body: '',
-      soul: ''
+      mind: {input1: null, input2: null},
+      body: {input1: null, input2: null},
+      soul: {input1: null, input2: null}
     };
   }
 
@@ -50,7 +50,6 @@ class App extends React.Component {
       context.setState({
         entries: data.Data
       })
-      module.exports = this.state;
       // console.log(context.state.entries);
     })
     .fail(function(err) {

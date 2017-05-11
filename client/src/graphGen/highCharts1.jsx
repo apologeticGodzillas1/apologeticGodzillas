@@ -22,7 +22,7 @@ module.exports = {
             ]
         },
         plotBackgroundColor: {
-            linearGradient: [0, 350],
+            linearGradient: [0, 350, 0, 0],
             stops: [
                 [0, 'rgb(80, 0, 50)'],
                 [1, 'rgb(20, 200, 150)']
