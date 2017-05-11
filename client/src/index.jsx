@@ -10,17 +10,23 @@ class App extends React.Component {
       entries: [],
       username: '',
       name: '',
-      mind: {input1: '', input2: ''},
-      body: {input1: '', input2: ''},
-      soul: {input1: '', input2: ''}
+      mindInput1: '',
+      mindInput2: '',
+      bodyInput1: '',
+      bodyInput2: '',
+      soulInput1: '',
+      soulInput2: ''
     };
   }
 
   add () {  // CREATE
     console.log(`${this.state.name} was added`);
-    console.log(`${this.state.mind} was added`);
-    console.log(`${this.state.body} was added`);
-    console.log(`${this.state.soul} was added`);
+    console.log(`${this.state.mindInput1} was added`);
+    console.log(`${this.state.mindInput2} was added`);
+    console.log(`${this.state.bodyInput1} was added`);
+    console.log(`${this.state.bodyInput2} was added`);
+    console.log(`${this.state.soulInput1} was added`);
+    console.log(`${this.state.soulInput2} was added`);
     var context = this;
     $.ajax({
       url: '/users/post',
@@ -63,21 +69,36 @@ class App extends React.Component {
     });
   }
 
-  handleChangeMind(e) {
+  handleChangeMind1(e) {
     this.setState({
-      mind: e.target.value
+      mindInput1: e.target.value
+    });
+  }
+  handleChangeMind2(e) {
+    this.setState({
+      mindInput2: e.target.value
     });
   }
 
-  handleChangeBody(e) {
+  handleChangeBody1(e) {
     this.setState({
-      body: e.target.value
+      bodyInput1: e.target.value
+    });
+  }
+  handleChangeBody2(e) {
+    this.setState({
+      bodyInput2: e.target.value
     });
   }
 
-  handleChangeSoul(e) {
+  handleChangeSoul1(e) {
     this.setState({
-      soul: e.target.value
+      soulInput1: e.target.value
+    });
+  }
+  handleChangeSoul2(e) {
+    this.setState({
+      soulInput2: e.target.value
     });
   }
 
@@ -108,9 +129,12 @@ class App extends React.Component {
           add={this.add.bind(this)}
           get={this.get.bind(this)}
           handleChangeName={this.handleChangeName.bind(this)}
-          handleChangeMind={this.handleChangeMind.bind(this)}
-          handleChangeBody={this.handleChangeBody.bind(this)}
-          handleChangeSoul={this.handleChangeSoul.bind(this)}
+          handleChangeMind1={this.handleChangeMind1.bind(this)}
+          handleChangeMind2={this.handleChangeMind2.bind(this)}
+          handleChangeBody1={this.handleChangeBody1.bind(this)}
+          handleChangeBody2={this.handleChangeBody2.bind(this)}
+          handleChangeSoul1={this.handleChangeSoul1.bind(this)}
+          handleChangeSoul2={this.handleChangeSoul2.bind(this)}
           handleClick={this.handleClick.bind(this)}
           handleChangeUsername={this.handleChangeUsername.bind(this)}
           getInfoClick={this.getInfoClick.bind(this)}

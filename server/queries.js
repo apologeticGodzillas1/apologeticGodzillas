@@ -72,7 +72,7 @@ module.exports = {
     console.log('INSIDE INSERT', data);
     connection.query(
     `INSERT INTO entries (users_ID, mindSleep, mindRead, bodyExercise, bodyWater, soulMood, soulYoga) VALUES
-    (${data.id}, ${data.mind.input1}, ${data.mind.input2}, ${data.body.input1}, ${data.body.input2}, ${data.soul.input1}, ${data.soul.input2})
+    (${data.id}, ${data.mindInput1}, ${data.mindInput2}, ${data.bodyInput1}, ${data.bodyInput2}, ${data.soulInput1}, ${data.soulInput2})
     `, function (err, results, fields) {
       if (err) {
         callback(err, null);

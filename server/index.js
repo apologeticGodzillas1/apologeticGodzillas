@@ -45,14 +45,18 @@ app.post('/users/post', function (req, res) {
   // console.log('REQ BODY', req.body);
   var entryObj = {
     username: req.body.name,
-    mind: req.body.mind,
-    body: req.body.body,
-    soul: req.body.soul
+    mindInput1: req.body.mindInput1,
+    mindInput2: req.body.mindInput2,
+    bodyInput1: req.body.bodyInput1,
+    bodyInput2: req.body.bodyInput2,
+    soulInput1: req.body.soulInput1,
+    soulInput2: req.body.soulInput2
   }
 
   queries.getUserId(entryObj.username, function(data) {
     // console.log('data', data[0].id);
     entryObj.id = data[0].id;
+    console.log('ENTRY DATA OBJ POST', entryObj)
     queries.insertUserData(entryObj, function(err, results) {
       if (err) {
         console.error('User data cannot be inserted into table');
