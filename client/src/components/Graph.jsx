@@ -45,26 +45,29 @@ class Graph extends React.Component {
   }
 
   componentWillReceiveProps(props) {
-    console.log('2PROPS', this.props.state.entries)
+    // console.log('2PROPS', this.props.state.entries)
     // options.series = this.props.state.entries;
     // if (props.state.entries.length > 0) {
     //   this.attributes = JSON.stringify(props.state.entries);
     // }
     // Extend Highcharts with modules
-    if (this.props.modules) {
-        this.props.modules.forEach(function (module) {
-            module(Highcharts);
-        });
+    if (props.state.entries.length > 0) {
+      if (this.props.modules) {
+          this.props.modules.forEach(function (module) {
+              module(Highcharts);
+          });
+      }
+      options.series = props.state.entries;
+      console.log(options);
+      // console.log(this.props.state.entries, "PROPSSSS")
+      // options.series = this.props.state.entries;
+      // Set container which the chart should render to.
+      this.chart = new Highcharts[this.props.type || "Chart"](
+          'container',
+          options
+      );
     }
-    options.series = this.props.state.entries;
-    console.log(options);
-    // console.log(this.props.state.entries, "PROPSSSS")
-    // options.series = this.props.state.entries;
-    // Set container which the chart should render to.
-    this.chart = new Highcharts[this.props.type || "Chart"](
-        'container',
-        options
-    );
+    props.state.entries = [];
   }
 
   render() {
