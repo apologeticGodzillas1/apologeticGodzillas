@@ -10,9 +10,9 @@ class App extends React.Component {
       entries: [],
       username: '',
       name: '',
-      mind: {input1: null, input2: null},
-      body: {input1: null, input2: null},
-      soul: {input1: null, input2: null}
+      mind: {input1: '', input2: ''},
+      body: {input1: '', input2: ''},
+      soul: {input1: '', input2: ''}
     };
   }
 
