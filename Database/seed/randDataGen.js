@@ -59,11 +59,16 @@ var randDataGen = function(duration, options) {
 // Note: this includes dropping database, etc. So make sure you only
 // copy and paste what you need.
 
+// OPTIONS PARAMETER NOT NEEDED FOR FUNCTION. It creates random days with
+// null data (user did not input anything for this day)
+
 //*********************************************************************
 
 // ALSO: this works best if you go to EloquentJS's sandbox to run the
 // function. The console output can be copied and pasted directly into
 // the terminal!
+
+// http://eloquentjavascript.net/code/
 
 //*********************************************************************
 
