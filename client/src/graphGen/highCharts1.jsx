@@ -8,7 +8,7 @@
   // var myChart =
   // Highcharts.chart('container', {
 
-var series = require('../index.jsx');
+var series = require('../components/App.jsx');
 
 module.exports = {
 
