@@ -52,6 +52,21 @@ var randDataGen = function(duration, options) {
 }
 
 
+//*********************************************************************
+
+// the following function creates mySQL queries that can be copied
+// and pasted IN FULL and creates random data into the entries table
+// Note: this includes dropping database, etc. So make sure you only
+// copy and paste what you need.
+
+//*********************************************************************
+
+// ALSO: this works best if you go to EloquentJS's sandbox to run the
+// function. The console output can be copied and pasted directly into
+// the terminal!
+
+//*********************************************************************
+
 
 var randInsertDataGen = function(userID, duration, options) {
   data = {
