@@ -1,0 +1,52 @@
+/* LOGIN PAGE */
+.definition {
+  font-size: 0.8em;
+}
+
+.vertical-center {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.login {
+  margin-left: 300px;
+}
+
+/* DASHBOARD NAV */
+.hero-dash {
+
+}
+
+.hero-secondary-dash {
+  font-size: 0.3em;
+  margin-left: 20px;
+}
+
+.custom-card {
+  background: whitesmoke;
+  box-shadow: 0 30px 50px rgba(0,0,0,0.3);
+}
+
+.mind {
+  margin-top: 0px;
+}
+
+.body {
+  margin-top: 5px;
+}
+
+.soul {
+  margin-top: 5px;
+}
+
+/* DASHBOARD GRAPH */
+#container {
+  height: 85%;
+  height: 85vh;
+}
+
+/* FRONT-END UTILITIES */
+.shade {
+  background: rgba(0, 0, 0, 0.5);
+}

@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
+import Login from './Login.jsx';
 import Dashboard from './Dashboard.jsx';
 
 class App extends React.Component {
@@ -9,7 +10,7 @@ class App extends React.Component {
     this.state = {
       entries: [],
       username: '',
-      name: '',
+      // name: '',
       mindInput1: '',
       mindInput2: '',
       mindInput3: '',
@@ -146,11 +147,16 @@ class App extends React.Component {
   render() {
     return(
       <div className="container-fluid">
-        <h1>Valence.</h1>
-        <Dashboard
+        <Login
+          handleChangeName={this.handleChangeName.bind(this)}
+          handleChangeUsername={this.handleChangeUsername.bind(this)}
+          getInfoClick={this.getInfoClick.bind(this)}
+          state={this.state}
+        />
+        {<Dashboard
           add={this.add.bind(this)}
           get={this.get.bind(this)}
-          handleChangeName={this.handleChangeName.bind(this)}
+          // handleChangeName={this.handleChangeName.bind(this)}
           handleChangeMind1={this.handleChangeMind1.bind(this)}
           handleChangeMind2={this.handleChangeMind2.bind(this)}
           handleChangeMind3={this.handleChangeMind3.bind(this)}
@@ -164,7 +170,7 @@ class App extends React.Component {
           handleChangeUsername={this.handleChangeUsername.bind(this)}
           getInfoClick={this.getInfoClick.bind(this)}
           state={this.state}
-        />
+        />}
       </div>
     )
   }

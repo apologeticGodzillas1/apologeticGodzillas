@@ -11,8 +11,11 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div>
+      <h1 className="display-4 hero-dash">Valence.
+        <small className="text-muted hero-secondary-dash align-middle">(va·lence)</small>
+      </h1>
         <div className="row">
-            <div className="col-sm-4">
+            <div className="col">
             <CategoryList
               add={this.props.add}
               get={this.props.get}
@@ -33,7 +36,7 @@ class Dashboard extends React.Component {
             />
           </div>
 
-          <div className="col-sm-8">
+          <div className="col-md-9">
             <Graph
               state={this.props.state}
             />

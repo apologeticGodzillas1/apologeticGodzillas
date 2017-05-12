@@ -48,7 +48,7 @@ app.get('/users/get', function (req, res) {
 app.post('/users/post', function (req, res) {
   // console.log('REQ BODY', req.body);
   var entryObj = {
-    username: req.body.name,
+    username: req.body.username || req.body.name,
     mindInput1: req.body.mindInput1,
     mindInput2: req.body.mindInput2,
     mindInput3: req.body.mindInput3,
