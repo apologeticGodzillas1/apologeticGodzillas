@@ -73,7 +73,7 @@ var randDataGen = function(duration, options) {
 //*********************************************************************
 
 
-var randInsertDataGen = function(userID, duration, options) {
+var randInsertDataGen = function(username, duration, options) {
   data = {
     mind1: [0],
     mind2: [0],
@@ -138,12 +138,15 @@ var randInsertDataGen = function(userID, duration, options) {
       soul1 int(2),
       soul2 int(2),
       soul3 int(2)
-    );\n`)
+    );\n
+
+    insert into users (username) values ('${username}');
+    `)
 
   for ( var i = 0; i < duration; i++ ) {
     console.log(
       `INSERT INTO entries
-      (users_id, mind1, mind2, mind3, body1, body2, body3, soul1, soul2, soul3) VALUES (${userID}, ${data.mind1[i]}, ${data.mind2[i]}, ${data.mind3[i]}, ${data.body1[i]}, ${data.body2[i]}, ${data.body3[i]}, ${data.soul1[i]}, ${data.soul2[i]}, ${data.soul3[i]});\n`
+      (users_id, mind1, mind2, mind3, body1, body2, body3, soul1, soul2, soul3) VALUES ((select id from users where username = '${username}'), ${data.mind1[i]}, ${data.mind2[i]}, ${data.mind3[i]}, ${data.body1[i]}, ${data.body2[i]}, ${data.body3[i]}, ${data.soul1[i]}, ${data.soul2[i]}, ${data.soul3[i]});\n`
     )
   }
 };
