@@ -15,9 +15,9 @@ var mysql = require('mysql');
 // COMMENT OR UNCOMMENT THIS FOR HEROKU DATABASE WORK
   var  db_config = {
     host: 'us-cdbr-iron-east-03.cleardb.net',
-    user: 'b69281186127a7',
-    password: 'a6ef7d66',
-    database: 'heroku_e0890c1a47a44c8'
+    user: 'b75a79c2ce8507',
+    password: 'eda7fc5e',
+    database: 'heroku_fb9a736d7c6266e'
   }
 
   var connection;

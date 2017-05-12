@@ -146,6 +146,7 @@ class App extends React.Component {
   render() {
     return(
       <div className="container-fluid">
+        <h1>Valence.</h1>
         <Dashboard
           add={this.add.bind(this)}
           get={this.get.bind(this)}
