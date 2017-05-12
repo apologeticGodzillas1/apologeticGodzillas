@@ -78,6 +78,6 @@ app.post('/users/post', function (req, res) {
   res.status(201)
 });
 
-app.listen(3000, function() {
+app.listen(process.env.PORT || 3000, function() { // Added for Heroku deployment
   console.log('listening on port 3000!');
 })

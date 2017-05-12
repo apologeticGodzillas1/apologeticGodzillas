@@ -1,5 +1,5 @@
 var mysql = require('mysql');
-var connection = require('../database/index.js')
+var connection = require('../Database/index.js') // Added case sensitivity for Heroku deployment
 
 
 // connection.query(Schema, function (err, reults, fields) {
