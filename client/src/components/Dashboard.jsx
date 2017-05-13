@@ -11,7 +11,7 @@ class Dashboard extends React.Component {
   render() {
     return (
       <div>
-      <h1 className="display-4 hero-dash">Valence.
+      <h1 className="display-4 hero-dash" id="dashboard">Valence.
         <small className="text-muted hero-secondary-dash align-middle">(va·lence)</small>
       </h1>
         <div className="row">
