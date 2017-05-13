@@ -140,6 +140,9 @@ class App extends React.Component {
   }
 
   getInfoClick () {
+    // window.scrollTo(0, 1000);
+    $('html, body').animate({ scrollTop: $(document).height() }, 'slow');
+
     this.get();
   }
 
