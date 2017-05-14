@@ -46,6 +46,10 @@
   height: 85vh;
 }
 
+#username {
+  font-size: 0.8em;
+}
+
 /* FRONT-END UTILITIES */
 .shade {
   background: rgba(0, 0, 0, 0.5);
