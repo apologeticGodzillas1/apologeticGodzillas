@@ -15,7 +15,7 @@ class Graph extends React.Component {
   constructor(props) {
     super (props);
     this.attributes;
-    // this.state = props.state;
+    this.currentUser;
   }
 
   // When the DOM is ready, create the chart.
@@ -27,16 +27,10 @@ class Graph extends React.Component {
           });
       }
       console.log(options);
-      // console.log(this.props.state.entries, "PROPSSSS")
-      // options.series = this.props.state.entries;
-      // Set container which the chart should render to.
       this.chart = new Highcharts[this.props.type || "Chart"](
           'container',
           options
       );
-
-      // Figure out how to set theme into chart. May not work here.
-      // this.chart.setOptions(theme);
   }
 
   //Destroy chart before unmount.
@@ -45,11 +39,6 @@ class Graph extends React.Component {
   }
 
   componentWillReceiveProps(props) {
-    // console.log('2PROPS', this.props.state.entries)
-    // options.series = this.props.state.entries;
-    // if (props.state.entries.length > 0) {
-    //   this.attributes = JSON.stringify(props.state.entries);
-    // }
     // Extend Highcharts with modules
     if (props.state.entries.length > 0) {
       if (this.props.modules) {
@@ -59,29 +48,27 @@ class Graph extends React.Component {
       }
       options.series = props.state.entries;
       console.log(options);
-      // console.log(this.props.state.entries, "PROPSSSS")
-      // options.series = this.props.state.entries;
+      
       // Set container which the chart should render to.
       this.chart = new Highcharts[this.props.type || "Chart"](
           'container',
           options
       );
+      this.currentUser = props.state.username;
     }
     props.state.entries = [];
   }
 
   render() {
-      return React.createElement('div', { id: 'container' });
+      return (
+        <div>
+        <h6 className="text-right text-muted" id="username">Welcome {this.currentUser}!</h6>
+        <div id="container">
+        </div>
+        </div>
+      )
+      // return React.createElement('div', { id: 'container' });
   }
-//   render() {
-//     return (
-//       <div id="container">
-//         GRAPHS HERE
-//         <br/>
-//         {this.attributes}
-//       </div>
-//     )
-//   }
 }
 
 export default Graph;

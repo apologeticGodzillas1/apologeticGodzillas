@@ -18,7 +18,7 @@ app.use(bodyParser.json());
 app.get('/users/get', function (req, res) {
   // console.log('INSIDE GET', req.query)
   var entryObj = {
-    username: req.query.username || req.query.name
+    username: (req.query.username).toLowerCase() || req.query.name
   }
   queries.getUserId(entryObj.username, function(data) {
 
@@ -48,7 +48,7 @@ app.get('/users/get', function (req, res) {
 app.post('/users/post', function (req, res) {
   // console.log('REQ BODY', req.body);
   var entryObj = {
-    username: req.body.name,
+    username: (req.body.username).toLowerCase() || req.body.name,
     mindInput1: req.body.mindInput1,
     mindInput2: req.body.mindInput2,
     mindInput3: req.body.mindInput3,
