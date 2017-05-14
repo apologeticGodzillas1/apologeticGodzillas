@@ -26,7 +26,6 @@ class Graph extends React.Component {
               module(Highcharts);
           });
       }
-      console.log(options);
       this.chart = new Highcharts[this.props.type || "Chart"](
           'container',
           options
@@ -47,7 +46,6 @@ class Graph extends React.Component {
           });
       }
       options.series = props.state.entries;
-      console.log(options);
       
       // Set container which the chart should render to.
       this.chart = new Highcharts[this.props.type || "Chart"](

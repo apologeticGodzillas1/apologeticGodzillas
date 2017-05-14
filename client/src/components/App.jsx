@@ -10,7 +10,6 @@ class App extends React.Component {
     this.state = {
       entries: [],
       username: '',
-      // name: '',
       mindInput1: '',
       mindInput2: '',
       mindInput3: '',
@@ -19,7 +18,8 @@ class App extends React.Component {
       bodyInput3: '',
       soulInput1: '',
       soulInput2: '',
-      soulInput3: ''
+      soulInput3: '',
+      userNotFound: false
     };
   }
 
@@ -41,32 +41,43 @@ class App extends React.Component {
       data: context.state
     })
     .done(function (res) {
-      console.log('input added');
+      console.log('Input successfully added for user');
       context.get();
     })
     .fail(function(err) {
-      console.log('Error adding input');
+      console.log('Error adding input for user');
       throw err;
     })
   };
 
   get () { // READ
     var context = this;
-    console.log('getting info!', context.state)
     $.ajax({
       url: '/users/get',
       type: 'GET',
       data: context.state
     })
     .done(function(data) {
-      // console.log('Print data to screen...', data);
-      context.setState({
-        entries: data.Data
-      })
-      // console.log(context.state.entries);
+      if (data.Fail) {
+        console.log('User not found')
+        context.setState({
+          userNotFound: true
+        })
+      } else {
+        if (context.state.userNotFound === true) {
+          context.setState({
+            userNotFound: false
+          })
+        }
+        console.log('Getting user info!')
+        context.setState({
+          entries: data.Data
+        })
+        $('html, body').animate({ scrollTop: $(document).height() }, 'slow');
+      }
     })
     .fail(function(err) {
-      console.log('err', err);
+      console.log('There was an error in the GET', err);
     })
   };
 
@@ -142,8 +153,6 @@ class App extends React.Component {
 
   getInfoClick () {
     // window.scrollTo(0, 1000);
-    $('html, body').animate({ scrollTop: $(document).height() }, 'slow');
-
     this.get();
   }
 
