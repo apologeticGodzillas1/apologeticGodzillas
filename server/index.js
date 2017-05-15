@@ -16,14 +16,11 @@ app.use(bodyParser.json());
 
 
 app.get('/users/get', function (req, res) {
-  // console.log('INSIDE GET', req.query)
   var entryObj = {
-    username: req.query.username || req.query.name
+    username: (req.query.username).toLowerCase() || req.query.name
   }
   queries.getUserId(entryObj.username, function(data) {
 
-    // entryObj.id = 1
-    // COMMENTED OUT FOR dbToGraph TESTING. CORRECT ID WAS NOT COMING UP
     if (data.length > 0) {
       entryObj.id = data[0].id;
 
@@ -31,7 +28,7 @@ app.get('/users/get', function (req, res) {
         if (err) {
           console.error('User data not selected', err)
         } else {
-          console.log('RESULTS...', results);
+          console.log('Gathering results...');
           res.json({
             Success: true,
             Data: queries.dbToGraph(results)
@@ -40,15 +37,17 @@ app.get('/users/get', function (req, res) {
       })
     } else {
       console.log('User not found');
+      res.json({
+        Fail: 'User was not found.'
+      })
     }
   });
 
 });
 
 app.post('/users/post', function (req, res) {
-  // console.log('REQ BODY', req.body);
   var entryObj = {
-    username: req.body.name,
+    username: (req.body.username).toLowerCase() || req.body.name,
     mindInput1: req.body.mindInput1,
     mindInput2: req.body.mindInput2,
     mindInput3: req.body.mindInput3,
@@ -61,9 +60,7 @@ app.post('/users/post', function (req, res) {
   }
 
   queries.getUserId(entryObj.username, function(data) {
-    // console.log('data', data[0].id);
     entryObj.id = data[0].id;
-    console.log('ENTRY DATA OBJ POST', entryObj)
     queries.insertUserData(entryObj, function(err, results) {
       if (err) {
         console.error('User data cannot be inserted into table');
