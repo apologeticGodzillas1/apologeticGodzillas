@@ -60,12 +60,11 @@ class Graph extends React.Component {
   render() {
       return (
         <div>
-        <h6 className="text-right text-muted" id="username">Welcome {this.currentUser}!</h6>
-        <div id="container">
-        </div>
+          <h6 className="text-right text-muted" id="username">Welcome {this.currentUser}</h6>
+          <div id="container">
+          </div>
         </div>
       )
-      // return React.createElement('div', { id: 'container' });
   }
 }
 

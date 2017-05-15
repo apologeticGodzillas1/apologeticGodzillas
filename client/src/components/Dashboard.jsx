@@ -35,8 +35,7 @@ class Dashboard extends React.Component {
               state={this.props.state}
             />
           </div>
-
-          <div className="col-sm-8">
+          <div className="col-9">
             <Graph
               state={this.props.state}
             />

@@ -24,7 +24,7 @@ class Login extends React.Component {
               <h4 id="slogan">Take <span id="charge">charge</span> of your life.</h4>
             </div>
           
-            <div className="col">
+            <div className="col login-field">
               <label className="login" htmlFor="nameInput">Enter your name:</label>
               <div className="input-group login">
               <input type="text" className="form-control form-control-sm col-4" id="nameInput" placeholder="Your name" value={this.props.state.username} onChange={this.props.handleChangeUsername}></input>

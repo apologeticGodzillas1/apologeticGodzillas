@@ -169,7 +169,10 @@ class App extends React.Component {
         <Dashboard
           add={this.add.bind(this)}
           get={this.get.bind(this)}
+<<<<<<< HEAD
           handleChangeName={this.handleChangeName.bind(this)}
+=======
+>>>>>>> (front-end) Clean up splash page and code artifacts
           handleChangeMind1={this.handleChangeMind1.bind(this)}
           handleChangeMind2={this.handleChangeMind2.bind(this)}
           handleChangeMind3={this.handleChangeMind3.bind(this)}

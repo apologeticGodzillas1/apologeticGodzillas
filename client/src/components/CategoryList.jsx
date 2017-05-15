@@ -10,6 +10,7 @@ class CategoryList extends React.Component {
     return (
       <div>
 <<<<<<< HEAD
+<<<<<<< HEAD
         <div>
           <form className="get-data-form">
             <div className="form-group">
@@ -53,6 +54,11 @@ class CategoryList extends React.Component {
         </div>
 =======
       <div className="mind card custom-card">
+=======
+        <div className="row custom-height">
+        <div className="col-12">
+        <div className="mind card custom-card">
+>>>>>>> (front-end) Clean up splash page and code artifacts
           <div className="card-block">
           <p className="lead">mind</p>
           <form>
@@ -68,7 +74,11 @@ class CategoryList extends React.Component {
           </form>
           </div>
         </div>
+        </div>
+        </div>
 
+        <div className="row custom-height">
+        <div className="col-12">
         <div className="body card custom-card">
           <div className="card-block">
           <p className="lead">body</p>
@@ -85,7 +95,11 @@ class CategoryList extends React.Component {
           </form>
           </div>
         </div>
+        </div>
+        </div>
 
+        <div className="row custom-height">
+        <div className="col-12">
         <div className="soul card custom-card">
           <div className="card-block">
           <p className="lead">soul</p>
@@ -102,6 +116,8 @@ class CategoryList extends React.Component {
           </form>
           <button type="submit" className="btn btn-secondary" onClick={this.props.handleClick}>Submit Info</button>
           </div>
+        </div>
+        </div>
         </div>
 
 >>>>>>> (front-end) Add background image to application
