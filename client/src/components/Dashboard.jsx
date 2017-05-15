@@ -15,7 +15,7 @@ class Dashboard extends React.Component {
           <small className="text-muted hero-secondary-dash align-middle">(va·lence)</small>
         </h1>
         <div className="row">
-            <div className="col-sm-4">
+            <div className="col">
             <CategoryList
               add={this.props.add}
               get={this.props.get}

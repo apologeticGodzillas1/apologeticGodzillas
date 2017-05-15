@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
+import Login from './Login.jsx';
 import Dashboard from './Dashboard.jsx';
 
 class App extends React.Component {
@@ -136,12 +137,17 @@ class App extends React.Component {
 
   handleClick(query) {
     this.add();
-    // this.setState({
-    //   name: '',
-    //   mind: '',
-    //   body: '',
-    //   soul: ''
-    // })
+    this.setState({
+      mindInput1: '',
+      mindInput2: '',
+      mindInput3: '',
+      bodyInput1: '',
+      bodyInput2: '',
+      bodyInput3: '',
+      soulInput1: '',
+      soulInput2: '',
+      soulInput3: '',
+    })
   }
 
   handleChangeUsername(e) {
@@ -157,37 +163,33 @@ class App extends React.Component {
   render() {
     return(
       <div>
-      <div className="container-fluid full-page-1">
-        <Login
-          handleChangeName={this.handleChangeName.bind(this)}
-          handleChangeUsername={this.handleChangeUsername.bind(this)}
-          getInfoClick={this.getInfoClick.bind(this)}
-          state={this.state}
-        />
-      </div>
-      <div className="container-fluid full-page-2">
-        <Dashboard
-          add={this.add.bind(this)}
-          get={this.get.bind(this)}
-<<<<<<< HEAD
-          handleChangeName={this.handleChangeName.bind(this)}
-=======
->>>>>>> (front-end) Clean up splash page and code artifacts
-          handleChangeMind1={this.handleChangeMind1.bind(this)}
-          handleChangeMind2={this.handleChangeMind2.bind(this)}
-          handleChangeMind3={this.handleChangeMind3.bind(this)}
-          handleChangeBody1={this.handleChangeBody1.bind(this)}
-          handleChangeBody2={this.handleChangeBody2.bind(this)}
-          handleChangeBody3={this.handleChangeBody3.bind(this)}
-          handleChangeSoul1={this.handleChangeSoul1.bind(this)}
-          handleChangeSoul2={this.handleChangeSoul2.bind(this)}
-          handleChangeSoul3={this.handleChangeSoul3.bind(this)}
-          handleClick={this.handleClick.bind(this)}
-          handleChangeUsername={this.handleChangeUsername.bind(this)}
-          getInfoClick={this.getInfoClick.bind(this)}
-          state={this.state}
-        />
-      </div>  
+        <div className="container-fluid full-page-1">
+          <Login
+            handleChangeName={this.handleChangeName.bind(this)}
+            handleChangeUsername={this.handleChangeUsername.bind(this)}
+            getInfoClick={this.getInfoClick.bind(this)}
+            state={this.state}
+          />
+        </div>
+        <div className="container-fluid full-page-2">
+          <Dashboard
+            add={this.add.bind(this)}
+            get={this.get.bind(this)}
+            handleChangeMind1={this.handleChangeMind1.bind(this)}
+            handleChangeMind2={this.handleChangeMind2.bind(this)}
+            handleChangeMind3={this.handleChangeMind3.bind(this)}
+            handleChangeBody1={this.handleChangeBody1.bind(this)}
+            handleChangeBody2={this.handleChangeBody2.bind(this)}
+            handleChangeBody3={this.handleChangeBody3.bind(this)}
+            handleChangeSoul1={this.handleChangeSoul1.bind(this)}
+            handleChangeSoul2={this.handleChangeSoul2.bind(this)}
+            handleChangeSoul3={this.handleChangeSoul3.bind(this)}
+            handleClick={this.handleClick.bind(this)}
+            handleChangeUsername={this.handleChangeUsername.bind(this)}
+            getInfoClick={this.getInfoClick.bind(this)}
+            state={this.state}
+          />
+        </div>  
       </div>
     )
   }
