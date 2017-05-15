@@ -21,6 +21,7 @@ app.get('/users/get', function (req, res) {
   }
   queries.getUserId(entryObj.username, function(data) {
 
+
     if (data.length > 0) {
       entryObj.id = data[0].id;
 
@@ -34,7 +35,7 @@ app.get('/users/get', function (req, res) {
             Data: queries.dbToGraph(results)
           });
         }
-      })
+      });
     } else {
       console.log('User not found');
       res.json({
@@ -59,8 +60,15 @@ app.post('/users/post', function (req, res) {
     soulInput3: req.body.soulInput3
   }
 
+<<<<<<< HEAD
   queries.getUserId(entryObj.username, function(data) {
     entryObj.id = data[0].id;
+=======
+  queries.getUserId(entryObj.username, function(err, data) {
+    if (data.length > 0) {
+      entryObj.id = data[0].id;
+    }
+>>>>>>> Creates a testing platform for databases, but it is not working yet
     queries.insertUserData(entryObj, function(err, results) {
       if (err) {
         console.error('User data cannot be inserted into table');
@@ -69,9 +77,8 @@ app.post('/users/post', function (req, res) {
           Success: true
         });
       }
-    })
+    });
   });
-
   res.status(201)
 });
 

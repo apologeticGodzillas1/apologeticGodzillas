@@ -25,7 +25,7 @@ module.exports = {
         if (err) {
           console.log('queries.js: getUserId function failed', err);
         } else {
-          callback(results);
+          callback(null, results);
         }
       })
   },
