@@ -152,19 +152,21 @@ class App extends React.Component {
   }
 
   getInfoClick () {
-    // window.scrollTo(0, 1000);
     this.get();
   }
 
   render() {
     return(
-      <div className="container-fluid">
+      <div>
+      <div className="container-fluid full-page-1">
         <Login
           handleChangeName={this.handleChangeName.bind(this)}
           handleChangeUsername={this.handleChangeUsername.bind(this)}
           getInfoClick={this.getInfoClick.bind(this)}
           state={this.state}
         />
+      </div>
+      <div className="container-fluid full-page-2">
         {<Dashboard
           add={this.add.bind(this)}
           get={this.get.bind(this)}
@@ -183,6 +185,7 @@ class App extends React.Component {
           getInfoClick={this.getInfoClick.bind(this)}
           state={this.state}
         />}
+      </div>  
       </div>
     )
   }
