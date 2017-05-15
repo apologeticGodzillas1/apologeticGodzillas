@@ -24,16 +24,6 @@ class App extends React.Component {
   }
 
   add () {  // CREATE
-    console.log(`${this.state.name} was added`);
-    console.log(`${this.state.mindInput1} was added`);
-    console.log(`${this.state.mindInput2} was added`);
-    console.log(`${this.state.mindInput3} was added`);
-    console.log(`${this.state.bodyInput1} was added`);
-    console.log(`${this.state.bodyInput2} was added`);
-    console.log(`${this.state.bodyInput3} was added`);
-    console.log(`${this.state.soulInput1} was added`);
-    console.log(`${this.state.soulInput2} was added`);
-    console.log(`${this.state.soulInput3} was added`);
     var context = this;
     $.ajax({
       url: '/users/post',
@@ -64,7 +54,7 @@ class App extends React.Component {
           userNotFound: true
         })
       } else {
-        if (context.state.userNotFound === true) {``
+        if (context.state.userNotFound === true) {
           context.setState({
             userNotFound: false
           })

@@ -15,7 +15,7 @@ class Graph extends React.Component {
   constructor(props) {
     super (props);
     this.attributes;
-    this.currentUser;
+    this.currentUser = '';
   }
 
   // When the DOM is ready, create the chart.
@@ -60,7 +60,7 @@ class Graph extends React.Component {
   render() {
       return (
         <div>
-          <h6 className="text-right text-muted" id="username">Welcome {this.currentUser}</h6>
+          <h6 className="text-right text-muted" id="username">Welcome {this.currentUser.slice(0,1).toUpperCase() + this.currentUser.slice(1).toLowerCase()}</h6>
           <div id="container">
           </div>
         </div>
