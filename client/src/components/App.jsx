@@ -63,7 +63,7 @@ class App extends React.Component {
           userNotFound: true
         })
       } else {
-        if (context.state.userNotFound === true) {
+        if (context.state.userNotFound === true) {``
           context.setState({
             userNotFound: false
           })
