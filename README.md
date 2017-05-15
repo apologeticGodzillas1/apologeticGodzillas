@@ -51,6 +51,12 @@ npm run server-dev
 
 View the project roadmap [here](https://trello.com/b/l4yKjHYs/mvp)
 
+Upon opening the link, the page render a loading message from index.html. Once App.jsx is loaded, it superimposes the rest of the page onto the screen. The page is divided into 3 main components:  CategoryList.jsx, Dashboard.jsx, and Graph.jsx. The CategoryList and Dashboard components are rendered by App.jsx, and the Graph component is rendered by Dashboard.jsx.
+
+The user is presented with an input field where they may enter a username. Once the button is clicked, the username is searched from the database to make sure if it exists. The username entry can handle capitalizations by reverting the text to lowercase in server/index.js If the username does not exist or the field is left blank, a message will appear stating that the user does not exist. If the username is in the database, the application will render the user’s graph through a GET request to the database. Also, the userNotFound state is changed to true. The page will scroll automatically to the Dashboard component, located at the bottom of the screen.
+
+The user is able to input values in the CategoryList component. Upon clicking the “Submit Info” button, the application performs a POST request to the database. The server handles this data using helper functions found in server/query.js. The insertUserData function will input the values into the database in sequential order. Queries incorporate the user’s id that is assigned to them in the users table to look up the user’s info and send the right data to the graph rendering component. 
+
 
 ## Contributing
 
