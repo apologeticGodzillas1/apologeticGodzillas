@@ -12,7 +12,7 @@
     "react-dev": "webpack -d --watch",
     "server-dev": "nodemon server/index.js",
     "start": "node server/index.js",
-    "test": "jest"
+    "test": "jest; mocha testing/schema-test.js; RES=$?; kill %1; exit $RES"
   },
   "dependencies": {
     "body-parser": "^1.17.0",
@@ -28,6 +28,7 @@
     "react-bootstrap": "^0.31.0",
     "react-dom": "^15.4.2",
     "react-test-renderer": "^15.5.4",
+    "request": "^2.81.0",
     "require": "^2.4.20",
     "sinon": "^1.17.3"
   },
